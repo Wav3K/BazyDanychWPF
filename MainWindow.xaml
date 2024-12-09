@@ -6,7 +6,26 @@
         xmlns:local="clr-namespace:BazyDanych4g1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <ListView x:Name="data">
+            <ListView.View> 
+                <GridView>
+                    <GridViewColumn Header="Film Name"
+                                    DisplayMemberBinding="{Binding Title}">
+                    </GridViewColumn>
+                    <GridViewColumn Header="Year"
+                                    DisplayMemberBinding="{Binding Year}">
+                    </GridViewColumn>
+                    <GridViewColumn Header="Category"
+                                    DisplayMemberBinding="{Binding Category.Name}">
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <WrapPanel>
+            <TextBox x:Name="filmName" Width="100"></TextBox>
+            <TextBox x:Name="yearFilm" Width="100"></TextBox>
+            <ComboBox x:Name="category" Width="100"></ComboBox>
+        </WrapPanel>
+    </StackPanel>
 </Window>
