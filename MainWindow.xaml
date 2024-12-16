@@ -22,10 +22,23 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <ComboBox x:Name="categoryFilter" 
+                  DisplayMemberPath="Name"
+                  SelectionChanged="CategoryFilter_OnSelectionChanged"></ComboBox>
         <WrapPanel>
             <TextBox x:Name="filmName" Width="100"></TextBox>
             <TextBox x:Name="yearFilm" Width="100"></TextBox>
             <ComboBox x:Name="category" Width="100"></ComboBox>
+            <Button x:Name="addFilm" Click="AddFilm_OnClick">Add Film</Button>
+            <Button Click="DeleteBtn_OnClick">Usun</Button>
+            <Button Click="EditBtn_OnClick">Edytuj</Button>
         </WrapPanel>
+        <WrapPanel x:Name="WrapPanelVisible" Visibility="Hidden">
+            <TextBox x:Name="filmNameEdit" Width="100"></TextBox>
+            <TextBox x:Name="yearFilmEdit" Width="100"></TextBox>
+            <ComboBox x:Name="categoryEdit" Width="100"></ComboBox>
+            <Button x:Name="editFilm" Click="ConfirmEditFilm_OnClick">Zatwierdz</Button>
+        </WrapPanel>
+        
     </StackPanel>
 </Window>
